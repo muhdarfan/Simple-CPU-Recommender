@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Processor Selector (ProSec) </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+	<header class="page-header header container-fluid">
+		<nav class="navbar navbar-expand-md">
+			<a class="navbar-brand" href="#">ProSec</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="main-navigation">
+				<ul class="navbar-nav">
+
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="card text-white bg-dark">
+			<div class="card-body">
+				<div class="card-text">
+					<h4>Choose a Brand</h4>
+
+					<form action="#" id="mainForm">
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="radio" name="brand" value="amd" autocomplete="off" checked> AMD
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="brand" value="intel" autocomplete="off"> INTEL
+							</label>
+
+						</div>
+
+						<h4>What is your budget?</h4>   
+
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="radio" name="budget" value="low" autocomplete="off" checked> Low
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="budget" value="medium" autocomplete="off"> Medium
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="budget" value="high" autocomplete="off"> High
+							</label>
+						</div>
+
+						<h4>What kind of work will you do with the CPU?</h4>
+
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="radio" name="work" value="basic" autocomplete="off" checked> Basic
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="work" value="gaming" autocomplete="off"> Gaming
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="work" value="workstation" autocomplete="off"> Workstation
+							</label>
+						</div>
+						<br /><br />
+
+						<center>
+							<button type="submit" class="btn btn-success btn-submit">Submit</button>
+						</center>
+					</form>
+
+					<div class="result" style="display: none;">
+						<hr />
+						<h4>The recommended CPU for your workload is...</h4>
+						<ul class="list-group text-dark cpuResult"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script src="main.js"></script>
+</body>
+</html>
