@@ -1,0 +1,52 @@
+:- discontiguous([cpu/1,brand/2,budget/2,use/2]).
+    
+      
+
+cpu(i7_10875h).
+cpu(ryzen5_3600).
+cpu(i9_1000k).
+cpu(i5_9400h).
+    
+    
+brand(ryzen5_3600,amd).
+budget(ryzen5_3600,medium).
+use(ryzen5_3600,gaming).
+
+brand(i7_10875h,intel).
+budget(i7_10875h,medium).
+use(i7_10875h,gaming).
+
+
+brand(i9_10900k,intel).
+budget(i9_10900k,high).
+use(intel,gaming).
+
+
+brand(i5_9400h,intel).
+budget(i5_9400h,low).
+use(i5_9400h,gaming).
+
+
+which_cpu(Brand, Budget, Use, Cpu) :-
+    brand(Cpu, Brand),
+    budget(Cpu, Budget),
+    use(Cpu, Use).
+
+recommend :-
+    write('What brand of CPU do you want? amd or intel? '), read(Brand), nl,
+    write('How much is your budget? low, medium or high? '), read(Budget),
+    write('What kind of work do you use the cpu for? basic, gaming or workstation? '), read(Use), nl,
+   
+    findall(Cpu, which_cpu(Brand,Budget,Use,Cpu), Suggestions),
+    write('I would recommend these CPU to you.. '), nl, writelist(Suggestions).
+
+writelist([]).
+writelist([H|T]) :- writeonce(H,T), writelist(T).  
+writeonce(H,T) :- member(H,T).
+writeonce(H,T) :- not(member(H,T)), write(H), nl.
+   
+
+
+
+
+
